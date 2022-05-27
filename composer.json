@@ -1,0 +1,22 @@
+{
+    "name": "hillus/sin-notifications-client",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Hillus\\SinNotificationsClient\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Hillus\\SinNotificationsClient\\": "src/",
+            "Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Hillus Hilbert",
+            "email": "hillushilbert@gmail.com"
+        }
+    ],
+    "require": {}
+}
