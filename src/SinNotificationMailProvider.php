@@ -10,9 +10,9 @@ class SinNotificationMailProvider extends MailServiceProvider
 
     public function boot() 
     { 
-    $this->publishes([
-            __DIR__.'/config/sinnotification.php' => config_path('sinnotification.php')
-        ], 'sinnotification');
+        $this->publishes([
+                __DIR__.'/../config/sinnotification.php' => config_path('sinnotification.php')
+            ], 'sinnotification');
     }
  
    
@@ -24,12 +24,13 @@ class SinNotificationMailProvider extends MailServiceProvider
     protected function registerIlluminateMailer()
     {
         Log::info(__METHOD__ . ' :: start');
-        if ($this->app['config']['mail.driver'] == 'sinnotification') 
+        
+        if (config('mail.driver','') == 'sinnotification' || config('mail.default','') == 'sinnotification') 
         {
-            Log::info('sinnotification');
+            Log::info(__METHOD__.' :: configurando sinnotification');
             $this->registerSinNotificationMailer();
         }else{
-            Log::info('swifft');
+            Log::info(__METHOD__.' :: configurando swifft');
             return parent::registerIlluminateMailer();
         }
         Log::info(__METHOD__ . ' :: end');
