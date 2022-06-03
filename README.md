@@ -1,6 +1,10 @@
 # sin-notifications-client
 
- - https://www.delenamalan.co.za/2020/laravel-custom-mail-driver.html
+    Api-gateway para entrega de e-mails via api rest
+
+## Instalação
+
+    composer require hillus/sin-notifications-client
 
 ## Publicando config 
 
